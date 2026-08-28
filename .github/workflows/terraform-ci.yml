@@ -8,8 +8,13 @@ on:
 
 jobs:
   terraform-checks:
-    name: "Terraform Format & Validate"
+    name: "Validate Lab"
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        lab:
+          - secure-static-web-hosting
 
     steps:
       - name: Checkout Code
@@ -23,8 +28,8 @@ jobs:
       - name: Terraform Format Check
         run: terraform fmt -check -recursive
 
-      - name: Terraform Init & Validate (Lab 1)
+      - name: Terraform Init & Validate
         run: |
-          cd secure-static-web-hosting
+          cd ${{ matrix.lab }}
           terraform init -backend=false
           terraform validate

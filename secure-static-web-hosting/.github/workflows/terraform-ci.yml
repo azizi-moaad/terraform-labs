@@ -25,6 +25,6 @@ jobs:
 
       - name: Terraform Init & Validate (Lab 1)
         run: |
-          cd level1-static-website
+          cd secure-static-web-hosting
           terraform init -backend=false
           terraform validate

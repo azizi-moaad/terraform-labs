@@ -15,6 +15,7 @@ jobs:
       matrix:
         lab:
           - secure-static-web-hosting
+          - vpc-ec2-autoscaling
 
     steps:
       - name: Checkout Code

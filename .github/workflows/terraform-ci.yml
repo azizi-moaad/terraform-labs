@@ -16,6 +16,7 @@ jobs:
         lab:
           - secure-static-web-hosting
           - vpc-ec2-autoscaling
+          - modular-container-stack
 
     steps:
       - name: Checkout Code
